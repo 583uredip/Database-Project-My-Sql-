@@ -1,0 +1,46 @@
+1. Display the names and wallet balances of all clients whose wallet balance is less than that of the client with c_id = 103.
+
+   Ans: select c_name,wallet_balance from Clients where wallet_balance < (select wallet_balance from Clients Where c_id=103)
+
+
+2. Show the names and phone numbers of all clients and brokers who have the same gender.
+
+
+Ans: select C.c_name  As  c_name,C.c_gender,B.b_name As b_name from Clients C join Brokr B on lower (C.c_gender)=lower (B.b_gender)
+
+
+3. Show all bitcoin names whose price is less than any broker commission rate multiplied by 10,000.
+
+Ans: select bi_name,price from Bitcoin where price < (select max(commissionRate)* 10000 from Broker)
+
+
+
+4. Show the names and wallet balances of all male clients who have more than 10,000 in their wallet.
+
+  Ans:select c_name,wallet_balance from Clients where (c_gender) ='male' and wallet_balance > 10000
+
+
+
+5. Show broker name and their commission amount calculated as 5% of average wallet balance. 
+
+Ans:select b_name,(0.05*(select avg(wallet_balance) from Clients)) AS Commission_Amount from Broker
+
+
+                                                                                View
+                                                                              --------
+
+
+
+Simple View:
+1. create or replace view simple_client_view As select c_id,c_name,wallet_balance from Clients
+
+    select * from Clients
+ 
+Complex View:
+1.CREATE OR REPLACE VIEW complex_client_bitcoin_view AS SELECT c.c_id,c.c_name,c.wallet_balance,b.bi_name AS bitcoin_name,b.price AS bitcoin_price,(c.wallet_balance  b.price) AS possible_unitsFROM Clients cJOIN Bitcoin b ON 1=1
+
+select * from Bitcoin
+
+
+
+

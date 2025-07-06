@@ -1,0 +1,36 @@
+1.create table Clients (c_id   number (5) constraint client_cid_pk PRIMARY KEY,c_name varchar2(50),c_email varchar2(50) ,c_gender varchar2(50),c_phoneNo varchar2(50), wallet_balance number (8,2))
+
+insert into Clients(c_id,c_name,c_gender,c_email,c_phoneNo,wallet_balance) values(102,'Rahul','Male',' rahul@gmail.com','019857447468',5888.98)
+insert into Clients(c_id,c_name,c_gender,c_email,c_phoneNo,wallet_balance) values(103,'Piotry','Female',' piotry@gmail.com','01756258987',587456.98)
+insert into Clients(c_id,c_name,c_gender,c_email,c_phoneNo,wallet_balance) values(104,'Prottoy','male',' prottoy@gmail.com','018657995245',587.98)
+insert into Clients(c_id,c_name,c_gender,c_email,c_phoneNo,wallet_balance) values(105,'Shad','male',' shad@gmail.com','01865799794',58796.98)
+
+
+2.create table Broker (b_id   number (5) constraint client_bid_pk PRIMARY KEY,b_name varchar2(50),b_email varchar2(50) ,b_gender varchar2(50),b_phoneNo varchar2(50), commissionRate number (8,2))
+
+insert into Broker (b_id,b_name,b_email,b_gender,b_phoneNo,commissionRate) values (202,'Niddi',' niddi@gmail.com','female','018796542',10.9899)
+
+insert into Broker (b_id,b_name,b_email,b_gender,b_phoneNo,commissionRate) values (203,'Roton',' roton@gmail.com','male','018796542544',5.698)
+
+insert into Broker (b_id,b_name,b_email,b_gender,b_phoneNo,commissionRate) values (204,'Masud',' mas@gmail.com','male','01982489654',7.69741)
+
+insert into Broker (b_id,b_name,b_email,b_gender,b_phoneNo,commissionRate) values (205,'Manik',' nik@gmail.com','male','01878963214',10.6971)
+
+3.create table Admin (a_id   number (5) constraint client_aid_pk PRIMARY KEY,a_name varchar2(50),a_email varchar2(50) ,a_gender varchar2(50),a_phoneNo varchar2(50), Admin_Type varchar2(50))
+
+insert into Admin (a_id,a_name,a_email,a_gender,a_phoneNo,Admin_Type) values (500,'Partho', 'partho@gmail.com','male','0178965412','Gold')
+
+4.create table Bitcoin (bi_id   number (5) constraint client_biid_pk PRIMARY KEY,bi_name varchar2(50),catagory varchar2(50), price number (8,2))
+
+insert into Bitcoin (bi_id,bi_name, category, price) values (30, 'Bitcoin', 'Crypto',50000.981)
+insert into Bitcoin (bi_id,bi_name, category, price) values (32, 'XRP', 'Crypto',70000.981)
+insert into Bitcoin (bi_id,bi_name, category, price) values (33, 'Tether', 'Crypto',500569.981)
+insert into Bitcoin (bi_id,bi_name, category, price) values (34, 'Ethereum', 'Crypto',60000.981)
+
+5.create table Payment (p_id number (5) constraint client_pi_pk PRIMARY KEY, p_date Date, p_type varchar2(50))
+
+insert into Payment (p_id,p_date,p_type) values (10, TO_DATE ('2025-09-19','YYYY-MM-DD'),'Online')
+insert into Payment (p_id,p_date,p_type) values (11, TO_DATE ('2025-09-5','YYYY-MM-DD'),'Online')
+insert into Payment (p_id,p_date,p_type) values (12, TO_DATE ('2025-05-9','YYYY-MM-DD'),'Online')
+insert into Payment (p_id,p_date,p_type) values (13, TO_DATE ('2025-08-20','YYYY-MM-DD'),'Online')
+
